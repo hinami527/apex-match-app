@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Match Results</title>
+</head>
+<body>
+    <h1>Apex Custom Match Results</h1>
+    <form action="/results" method="POST">
+        {% for i in range(1, 21) %}
+            <h2>Team {{ i }}</h2>
+            <label>Team Name:</label>
+            <input type="text" name="team_name_{{ i }}" required><br>
+            <label>Kills:</label>
+            <input type="number" name="kills_{{ i }}" required><br>
+            <label>Placement:</label>
+            <input type="number" name="placement_{{ i }}" required><br><br>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
